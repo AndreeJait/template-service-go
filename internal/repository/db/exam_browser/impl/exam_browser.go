@@ -1,7 +1,7 @@
 package impl
 
 import (
-	"github.com/AndreeJait/exam-platform-service/internal/repository/db/exam_browser"
+	"github.com/AndreeJait/template-service-go/internal/repository/db/exam_browser"
 	"github.com/AndreeJait/go-utility/loggerw"
 	"github.com/AndreeJait/go-utility/sqlw/postgres"
 )

@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/AndreeJait/exam-platform-service/common/constant"
-	"github.com/AndreeJait/exam-platform-service/config"
+	"github.com/AndreeJait/template-service-go/common/constant"
+	"github.com/AndreeJait/template-service-go/config"
 	"github.com/AndreeJait/go-utility/configw"
 	"github.com/AndreeJait/go-utility/gracefull"
 	"github.com/AndreeJait/go-utility/loggerw"

@@ -1,6 +1,6 @@
 package main
 
-import "github.com/AndreeJait/exam-platform-service/common/constant"
+import "github.com/AndreeJait/template-service-go/common/constant"
 
 func main() {
 	cmdRoot.Flags().StringP(constant.FlagEnvMode, constant.FlagShortEnvMode,

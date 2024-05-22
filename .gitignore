@@ -4,3 +4,5 @@ build/
 files/config/production/config.yaml
 files/config/staging/config.yaml
 
+.idea
+.vscode

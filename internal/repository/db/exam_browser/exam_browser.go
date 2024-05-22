@@ -2,7 +2,7 @@ package exam_browser
 
 import (
 	"context"
-	"github.com/AndreeJait/exam-platform-service/internal/model/user"
+	"github.com/AndreeJait/template-service-go/internal/model/user"
 )
 
 type ExamBrowser interface {

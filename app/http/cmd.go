@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/AndreeJait/exam-platform-service/common/constant"
+	"github.com/AndreeJait/template-service-go/common/constant"
 	"github.com/spf13/cobra"
 )
 

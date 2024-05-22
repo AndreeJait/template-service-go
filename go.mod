@@ -1,4 +1,4 @@
-module github.com/AndreeJait/exam-platform-service
+module github.com/AndreeJait/template-service-go
 
 go 1.22.2
 
