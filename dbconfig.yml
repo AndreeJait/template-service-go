@@ -1,0 +1,5 @@
+development:
+  dialect: postgres
+  dir: files/migrations/postgres
+  datasource: "-"
+  table: gorp_migrations
