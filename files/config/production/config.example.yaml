@@ -10,3 +10,11 @@ db:
   user: postgres
   password: postgres
   db_name: exam_platform
+
+secret:
+  jwt: gC9EU8bi1v3AKjyIsF8fol9ZiwY3yZp7X8C6Yoc3J055cOBgm1jH2AguG60eApaCTjEdbj9E4OcCJYgciH66hGncdOMWL7Y85lI8SGPIg63FIaXRBrVfezA69rvAURuz3d/NrGY1/lGL7rVv7phRCKyMSeuXvp0FWkieecJrvo+Io6HBLYYyvkga44Lm4PorOcBDKq8XGfbGpMJrGA2Z0XU+GV7drrPLfOb/YeTvC6AN6qkLre0bFjMtBvRtZMgumm0pZsaK5uYv9v3bMl3z8rgjBh0AeewfsZSK/MFVxlNNSuCrKk+cjDQKrTN+6zbOPpqX9ILMcP50t7GpHbEj2w==
+  hash: WP+iBhVhf47+fzwLAlkmaQERB4sMl6R3AQ==
+
+setting:
+  jwt_token_duration_expired_in_minute: 120
+  jwt_refresh_token_duration_expired_in_minute: 36000

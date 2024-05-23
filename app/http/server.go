@@ -3,12 +3,14 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/AndreeJait/template-service-go/common/constant"
-	"github.com/AndreeJait/template-service-go/config"
 	"github.com/AndreeJait/go-utility/configw"
 	"github.com/AndreeJait/go-utility/gracefull"
 	"github.com/AndreeJait/go-utility/loggerw"
+	"github.com/AndreeJait/go-utility/response"
 	"github.com/AndreeJait/go-utility/sqlw/postgres"
+	"github.com/AndreeJait/go-utility/timew"
+	"github.com/AndreeJait/template-service-go/common/constant"
+	"github.com/AndreeJait/template-service-go/config"
 	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/labstack/echo/v4"
 	"os"
@@ -23,6 +25,8 @@ type Api struct {
 	pool     *pgxpool.Pool
 	graceful *gracefull.GracefulShutDown
 	e        *echo.Echo
+	appMode  constant.AppMode
+	timeLoc  timew.Time
 }
 
 func initServer(appMode constant.AppMode) {
@@ -73,6 +77,8 @@ func initServer(appMode constant.AppMode) {
 	gracefully.AddFunc("shutdown-server", func() error {
 		return e.Shutdown(context.Background())
 	})
+
+	timeLoc := timew.New(timew.LoadLocation("Asia/Jakarta"))
 	var apiInstance = Api{
 		log:      log,
 		cfg:      cfg,
@@ -80,39 +86,42 @@ func initServer(appMode constant.AppMode) {
 		pool:     pool,
 		e:        e,
 		graceful: gracefully,
+		appMode:  appMode,
+		timeLoc:  timeLoc,
 	}
 
 	apiInstance.Start(appMode)
 }
 
-func (api *Api) Start(appMode constant.AppMode) {
+func (a *Api) Start(appMode constant.AppMode) {
 
-	api.log.Infof("starting the server")
+	a.log.Infof("starting the server")
 	s := make(chan os.Signal, 1)
 
-	api.e.HideBanner = true
-	api.e.HidePort = true
+	a.e.HideBanner = true
+	a.e.HidePort = true
 
-	api.e.Debug = appMode == constant.Development
+	a.e.Debug = appMode == constant.Development
 
-	// init repository
+	a.e.Use(loggerw.LoggerWitRequestID(a.log, a.e.Debug))
 
-	// init handler
+	a.e.HTTPErrorHandler = response.CustomHttpErrorHandler(a.log,
+		response.MapDefaultErrResponse, a.e.Debug)
 
-	// init use case
+	a.startV1()
 
 	go func() {
-		api.log.Infof("server start at %s", api.cfg.Service.Url)
-		api.log.Error(api.e.Start(fmt.Sprintf("%s:%s",
-			api.cfg.Service.Host, api.cfg.Service.Port)))
+		a.log.Infof("server start at %s", a.cfg.Service.Url)
+		a.log.Error(a.e.Start(fmt.Sprintf("%s:%s",
+			a.cfg.Service.Host, a.cfg.Service.Port)))
 	}()
 
 	signal.Notify(s, syscall.SIGINT, syscall.SIGTERM, syscall.SIGHUP)
 	<-s
 
-	api.log.Infof("shutting down %s", api.cfg.Service.Name)
+	a.log.Infof("shutting down %s", a.cfg.Service.Name)
 	// shutdown opened connection
-	api.graceful.ShutdownAll()
+	a.graceful.ShutdownAll()
 
-	api.log.Infof("was shutdown gracefully")
+	a.log.Infof("was shutdown gracefully")
 }

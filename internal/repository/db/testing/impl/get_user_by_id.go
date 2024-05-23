@@ -5,7 +5,7 @@ import (
 	"github.com/AndreeJait/template-service-go/internal/model/user"
 )
 
-func (e *examBrowser) GetUserByID(ctx context.Context, userID string) (user user.User, err error) {
+func (e *testingImpl) GetUserByID(ctx context.Context, userID string) (user user.User, err error) {
 	err = e.sqlW.Get(ctx,
 		&user,
 		queryGetUserByID,
