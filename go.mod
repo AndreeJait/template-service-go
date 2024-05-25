@@ -3,7 +3,7 @@ module github.com/AndreeJait/template-service-go
 go 1.22.2
 
 require (
-	github.com/AndreeJait/go-utility v1.0.2-0.20240523151741-573180cccb43
+	github.com/AndreeJait/go-utility v0.0.7
 	github.com/jackc/pgx/v5 v5.5.5
 	github.com/labstack/echo/v4 v4.12.0
 	github.com/lib/pq v1.10.9

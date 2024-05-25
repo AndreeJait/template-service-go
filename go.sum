@@ -8,6 +8,14 @@ github.com/AndreeJait/go-utility v0.0.0-20240523054154-1bb8b2f8a853 h1:BWiqYbmjk
 github.com/AndreeJait/go-utility v0.0.0-20240523054154-1bb8b2f8a853/go.mod h1:uydzkGPB5MjeBXtgAwsxCKXo9mps/k2trCQfeGkGKYs=
 github.com/AndreeJait/go-utility v0.0.0-20240523063950-fb5146cf4c50 h1:FKTDNw9wqEmhhAizZlZhtQaI05TpEKHo5EUTEQ5iROw=
 github.com/AndreeJait/go-utility v0.0.0-20240523063950-fb5146cf4c50/go.mod h1:uydzkGPB5MjeBXtgAwsxCKXo9mps/k2trCQfeGkGKYs=
+github.com/AndreeJait/go-utility v0.0.4 h1:F0tCfUrEcQTNELMw6uoDSLBGApP6AhSJuKhSwfA39HA=
+github.com/AndreeJait/go-utility v0.0.4/go.mod h1:uydzkGPB5MjeBXtgAwsxCKXo9mps/k2trCQfeGkGKYs=
+github.com/AndreeJait/go-utility v0.0.6 h1:MKC+5Zla5+H4yAxq/sDlN6AfrwvSv0gUlLLox5243E4=
+github.com/AndreeJait/go-utility v0.0.6/go.mod h1:uydzkGPB5MjeBXtgAwsxCKXo9mps/k2trCQfeGkGKYs=
+github.com/AndreeJait/go-utility v0.0.7 h1:nTms4cPa0zZYwogeu3l84KOJqHFQ+nvgzD+82+CFm5U=
+github.com/AndreeJait/go-utility v0.0.7/go.mod h1:uydzkGPB5MjeBXtgAwsxCKXo9mps/k2trCQfeGkGKYs=
+github.com/AndreeJait/go-utility v1.0.1 h1:EWGQNFc1HGKB3VLCYc329j7Moq1ou/mqTVO6D2BsugA=
+github.com/AndreeJait/go-utility v1.0.1/go.mod h1:uydzkGPB5MjeBXtgAwsxCKXo9mps/k2trCQfeGkGKYs=
 github.com/AndreeJait/go-utility v1.0.2-0.20240523081059-b6cb667526ba h1:uulQ40qtA+YLJHLd+1IWBxr35Mtu3BD4yZJHSmU2ybI=
 github.com/AndreeJait/go-utility v1.0.2-0.20240523081059-b6cb667526ba/go.mod h1:uydzkGPB5MjeBXtgAwsxCKXo9mps/k2trCQfeGkGKYs=
 github.com/AndreeJait/go-utility v1.0.2-0.20240523131222-8d93f2c4e1cb h1:BGY3boZtU3vhE2Awp9sBKsbpqlwLc6D+z3zh7lQbJSc=
